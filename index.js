@@ -9,16 +9,16 @@
 
 // EXAMPLE SOLUTION CODE:
 class Airplane {
-  constructor(name) {
-    this.name = name;
-    this.isFlying = false;
-  }
-  takeOff() {
-    this.isFlying = true;
-  }
-  land() {
-    this.isFlying = false;
-  }
+    constructor(name) {
+        this.name = name;
+        this.isFlying = false;
+    }
+    takeOff() {
+        this.isFlying = true;
+    }
+    land() {
+        this.isFlying = false;
+    }
 }
 
 /*
@@ -41,7 +41,20 @@ class Airplane {
 */
 
 class Person {
-
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        this.stomach = [];
+    }
+    eat(someFood) {
+        if (this.stomach.length < 10) this.stomach.push(someFood);
+    }
+    poop() {
+        this.stomach = [];
+    }
+    toString() {
+        return `${this.name}, ${this.age}`;
+    }
 }
 
 /*
@@ -58,9 +71,7 @@ class Person {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-class Car {
-
-}
+class Car {}
 
 /*
   TASK 3
@@ -74,9 +85,7 @@ class Car {
         + Speaking should return a phrase `Hello my name is {name}, I am from {location}`.
         + {name} and {location} of course come from the instance's own properties.
 */
-class Lambdasian {
-
-}
+class Lambdasian {}
 
 /*
   TASK 4
@@ -111,9 +120,7 @@ class Instructor {
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
-
-}
+class Student {}
 
 /*
   TASK 6
@@ -128,8 +135,20 @@ class Student {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
+class ProjectManager extends Instructor {
+    constructor(ProjMan) {
+        super(ProjMan)
+        this.gradClassName = ProjMan.gradClassName;
+        this.favInstructor = ProjMan.favInstructor;
+    }
 
+    standUp(channel) {
+        return `${this.name} announces to ${channel}, @channel standy times`;
+    }
+
+    debugsCode(studObj, subject) {
+        return `${this.name} debugs ${studObj.name}'s code on ${subject}`
+    }
 }
 
 /*
@@ -145,12 +164,12 @@ class ProjectManager {
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
 if (typeof exports !== 'undefined') {
-  module.exports = module.exports || {}
-  if (Airplane) { module.exports.Airplane = Airplane }
-  if (Person) { module.exports.Person = Person }
-  if (Car) { module.exports.Car = Car }
-  if (Lambdasian) { module.exports.Lambdasian = Lambdasian }
-  if (Instructor) { module.exports.Instructor = Instructor }
-  if (Student) { module.exports.Student = Student }
-  if (ProjectManager) { module.exports.ProjectManager = ProjectManager }
+    module.exports = module.exports || {}
+    if (Airplane) { module.exports.Airplane = Airplane }
+    if (Person) { module.exports.Person = Person }
+    if (Car) { module.exports.Car = Car }
+    if (Lambdasian) { module.exports.Lambdasian = Lambdasian }
+    if (Instructor) { module.exports.Instructor = Instructor }
+    if (Student) { module.exports.Student = Student }
+    if (ProjectManager) { module.exports.ProjectManager = ProjectManager }
 }
