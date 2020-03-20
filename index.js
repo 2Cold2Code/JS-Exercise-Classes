@@ -142,7 +142,26 @@ class Lambdasian extends Person{
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {}
+class Instructor extends Lambdasian{
+  constructor(atts){
+    super(atts);
+    this.name = atts.name;
+    this.age = atts.age;
+    this.location = atts.location;
+    this.specialty = atts.specialty;
+    this.favLanguage = atts.favLanguage;
+    this.catchPhrase = atts.catchPhrase;
+    
+  }
+
+  demo(subject){
+    return `Today we are learning about ${subject}`;
+  }
+
+  grade(student, subject){
+    return `${this.name} receives a perfect score on ${subject}`
+  }
+}
 
 /*
   TASK 5
