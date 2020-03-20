@@ -145,9 +145,9 @@ class Lambdasian extends Person{
 class Instructor extends Lambdasian{
   constructor(atts){
     super(atts);
-    this.name = atts.name;
-    this.age = atts.age;
-    this.location = atts.location;
+    // this.name = atts.name;
+    // this.age = atts.age;
+    // this.location = atts.location;
     this.specialty = atts.specialty;
     this.favLanguage = atts.favLanguage;
     this.catchPhrase = atts.catchPhrase;
@@ -178,8 +178,27 @@ class Instructor extends Lambdasian{
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {}
+class Student extends Lambdasian{
+  constructor(atts){
+    super(atts);
+    this.previousBackground = atts.previousBackground;
+    this.className = atts.className;
+    this.favSubjects = atts.favSubjects;
+  }
 
+  listSubjects(){
+    return `Loving ${this.favSubjects}!`;
+  }
+
+  PRAssignment(subject){
+    return `${this.name} has submitted a PR for ${subject}`
+  }
+
+  sprintChallenge(subject){
+    return `${this.name} has begun sprint challenge on ${subject}`
+  }
+  
+}
 /*
   TASK 6
     - Write a ProjectManager class extending Instructor.
