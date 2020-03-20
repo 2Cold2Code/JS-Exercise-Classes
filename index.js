@@ -184,8 +184,9 @@ class Student extends Lambdasian{
     this.previousBackground = atts.previousBackground;
     this.className = atts.className;
     this.favSubjects = atts.favSubjects;
+    this.grade = Math.floor(Math.random() * 100);
   }
-
+  
   listSubjects(){
     return `Loving ${this.favSubjects}!`;
   }
@@ -197,7 +198,7 @@ class Student extends Lambdasian{
   sprintChallenge(subject){
     return `${this.name} has begun sprint challenge on ${subject}`
   }
-  
+ 
 }
 /*
   TASK 6
